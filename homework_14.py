@@ -17,7 +17,7 @@ def get_weather(latitude, longitude, city_name):
 
 
 cities = [
-    {'name': 'London', 'latitude': 51.51, 'longitude': -0.13},
+    {'name': 'Lпшondon', 'latitude': 51.51, 'longitude': -0.13},
     {'name': 'Paris', 'latitude': 48.86, 'longitude': 2.35},
     {'name': 'Berlin', 'latitude': 52.52, 'longitude': 13.40},
     {'name': 'Rome', 'latitude': 41.89, 'longitude': 12.49},
