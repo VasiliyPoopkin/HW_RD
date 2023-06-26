@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Моя сторінка</title>
+  <style></style>
+</head>
+<body>
+<!--  <div>-->
+    <h1>Родіон</h1>
+    <div class="row">
+      <div class="container">
+        <img src="https://www.kino-teatr.ru/news/23877/210984.jpg" width="300" height="200" alt="Зображення" class="photo">
+  </div>
+    <div class="col-md-8">
+        <h2>Про себе</h2>
+        <p>Навчаюсь на Full-stack розробник, 25 років, сфера роботи дизайн</p>
+      </div>
+  </div>
+
+
+    <h2>Список виконаних домашніх завдань</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Основи роботи із системою контролю версій Git</th>
+          <th>5 </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Базові типи даних та операції. Part 1</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Базові типи даних та операції. Part 2</td>
+          <td>5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Досвід роботи</h2>
+    <div>
+      <h4>Навчання у компанії Robot Dreams</h4>
+      <p>7 місяців</p>
+      <p>Освоював навички для Full-stack розробника, а саме мови программуваня: Python, JS, HTML, CSS</p>
+      <p>Завершення навчання</p>
+    </div>
+    <h2>Кількість друзів: <span id="friendCount"></span></h2>
+    <button id="addFriendBtn" class="btn btn-primary">Додати в друзі</button>
+    <script>function getRandomFriendCount() {
+  return Math.floor(Math.random() * 100);
+}
+var friendCountElement = document.getElementById("friendCount");
+
+var addFriendBtn = document.getElementById("addFriendBtn");
+
+var friendCount = getRandomFriendCount();
+friendCountElement.textContent = friendCount;
+
+addFriendBtn.addEventListener("click", function() {
+  friendCount++;
+  friendCountElement.textContent = friendCount;
+
+  addFriendBtn.disabled = true;
+  addFriendBtn.textContent = "Очікується підтвердження";
+});</script>
+    <button id="messageBtn" class="btn btn-secondary">Написати повідомлення</button>
+    <script>var messageBtn = document.getElementById("messageBtn");
+
+var colors = ["blue", "green"];
+
+var colorIndex = 0;
+
+function changeColor() {
+  messageBtn.style.backgroundColor = colors[colorIndex];
+  colorIndex++;
+  if (colorIndex === colors.length) {
+    colorIndex = 0;
+  }
+}
+messageBtn.addEventListener("click", changeColor);</script>
+    <button id="offerJobBtn" class="btn btn-success">Запропонувати роботу</button>
+    <script>var jobBtn = document.getElementById("offerJobBtn");
+var addFriendBtn = document.getElementById("addFriendBtn");
+
+function toggleJobButton() {
+  var addFriendVisible = addFriendBtn.style.display !== "none";
+
+  if (addFriendVisible) {
+    addFriendBtn.style.display = "none";
+    jobBtn.textContent = "Додати в друзі";
+  } else {
+    addFriendBtn.style.display = "block";
+    jobBtn.textContent = "Запропонувати роботу";
+  }
+}
+jobBtn.addEventListener("click", toggleJobButton);</script>
+    <table id="homeworkTable">
+    <thead>
+    <tr>
+      <th>Домашнє завдання</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+    <button id="submitHomeworkBtn">Здати ДЗ</button>
+    <script>var submitHomeworkBtn = document.getElementById("submitHomeworkBtn");
+var homeworkTable = document.getElementById("homeworkTable").getElementsByTagName("tbody")[0];
+
+function addHomeworkRow() {
+  var homeworkText = prompt("Введіть текст зданого завдання:");
+
+  if (homeworkText) {
+    var newRow = document.createElement("tr");
+    var newCell = document.createElement("td");
+    newCell.textContent = homeworkText;
+    newRow.appendChild(newCell);
+    homeworkTable.appendChild(newRow);
+  }
+}
+submitHomeworkBtn.addEventListener("click", addHomeworkRow);</script>
+    </thead>
+    <tbody>
